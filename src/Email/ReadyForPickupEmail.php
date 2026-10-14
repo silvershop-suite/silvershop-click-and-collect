@@ -37,7 +37,9 @@ class ReadyForPickupEmail
 
     public static function create_for(Order $order): Email
     {
-        $from = ShopConfigExtension::config()->get('email_from') ?: Email::config()->get('admin_email');
+        $from = ShopConfigExtension::config()->get('email_from')
+            ?: Email::config()->get('admin_email')
+            ?: ('no-reply@' . self::senderHost());
         $to = (string) $order->getLatestEmail();
 
         $reference = $order->exists() ? (string) $order->Reference : '';
@@ -89,10 +91,10 @@ class ReadyForPickupEmail
             return false;
         }
 
-        $email = self::create_for($order);
-
+        // Building AND sending are best-effort: a misconfigured sender or transport must never break the
+        // order write that triggered this (it runs from Order::onAfterWrite).
         try {
-            $email->send();
+            self::create_for($order)->send();
         } catch (Throwable $throwable) {
             Injector::inst()->get(LoggerInterface::class)->error(
                 'ReadyForPickupEmail: failed to send for order ' . (int) $order->ID . ': ' . $throwable->getMessage()
@@ -101,5 +103,16 @@ class ReadyForPickupEmail
         }
 
         return true;
+    }
+
+    /**
+     * Host for the synthetic no-reply fallback sender, used only when neither ShopConfig.email_from nor
+     * Email.admin_email is configured (so setFrom never receives an empty address).
+     */
+    private static function senderHost(): string
+    {
+        $host = parse_url((string) Director::absoluteBaseURL(), PHP_URL_HOST);
+
+        return is_string($host) && $host !== '' ? $host : 'localhost';
     }
 }

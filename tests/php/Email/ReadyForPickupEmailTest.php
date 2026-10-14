@@ -57,6 +57,19 @@ class ReadyForPickupEmailTest extends SapphireTest
         $this->assertFalse(ReadyForPickupEmail::send_for($order), 'No recipient means nothing is sent');
     }
 
+    public function testSendForDoesNotThrowWithNoConfiguredSender(): void
+    {
+        // No ShopConfig.email_from and no Email.admin_email: building the email must still not throw
+        // (empty From would break the order write that triggers it) — it falls back to no-reply@host.
+        Email::config()->set('admin_email', null);
+
+        $order = Order::create(['Email' => 'buyer@example.com']);
+        $order->write();
+
+        $this->assertTrue(ReadyForPickupEmail::send_for($order));
+        $this->assertEmailSent('buyer@example.com');
+    }
+
     public function testMarkReadyForPickupSendsEmail(): void
     {
         $order = Order::create(['Email' => 'buyer@example.com']);
