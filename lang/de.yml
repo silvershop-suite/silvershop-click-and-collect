@@ -1,0 +1,22 @@
+de:
+  SilverShop\ClickAndCollect\Model\PickupShippingMethod:
+    SINGULARNAME: 'Abholmethode'
+    PLURALNAME: 'Abholmethoden'
+    db_Fee: 'Abholgebühr'
+    FeeDesc: 'Optionale pauschale Abholgebühr. Für kostenlose Abholung bei 0 lassen.'
+  SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
+    TabPickup: 'Abholung'
+    Location: 'Abholort'
+    ReadyForPickup: 'Zur Abholung bereit'
+    ReadyForPickupDesc: 'Setzen Sie dies, um den Kunden zu benachrichtigen, dass die Bestellung abholbereit ist. Beim Speichern wird einmalig eine E-Mail gesendet.'
+    Collected: 'Abgeholt'
+    CollectedDesc: 'Setzen, wenn der Kunde die Bestellung abgeholt hat.'
+    db_ReadyForPickup: 'Zur Abholung bereit'
+    db_Collected: 'Abgeholt'
+  SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
+    Subject: 'Ihre Bestellung #{OrderNo} ist abholbereit'
+    Heading: 'Ihre Bestellung ist abholbereit'
+    Intro: 'Gute Nachrichten — Ihre Bestellung liegt zur Abholung im Geschäft bereit.'
+    Order: 'Bestellung'
+    BringReference: 'Bitte bringen Sie Ihre Bestellnummer mit (und einen Ausweis, falls wir danach fragen), wenn Sie abholen.'
+    Fineprint: 'Sie erhalten diese E-Mail, weil Sie Ihre Bestellung im Geschäft abholen möchten.'

@@ -1,0 +1,22 @@
+nl:
+  SilverShop\ClickAndCollect\Model\PickupShippingMethod:
+    SINGULARNAME: 'Afhaalmethode'
+    PLURALNAME: 'Afhaalmethodes'
+    db_Fee: 'Afhaalkosten'
+    FeeDesc: 'Optionele vaste afhaalkosten. Laat op 0 staan voor gratis afhalen.'
+  SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
+    TabPickup: 'Afhalen'
+    Location: 'Afhaallocatie'
+    ReadyForPickup: 'Klaar om af te halen'
+    ReadyForPickupDesc: 'Stel dit in om de klant te laten weten dat de bestelling klaarligt. Bij opslaan krijgt de klant eenmalig een e-mail.'
+    Collected: 'Opgehaald'
+    CollectedDesc: 'Stel in wanneer de klant de bestelling heeft opgehaald.'
+    db_ReadyForPickup: 'Klaar om af te halen'
+    db_Collected: 'Opgehaald'
+  SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
+    Subject: 'Je bestelling #{OrderNo} ligt klaar om af te halen'
+    Heading: 'Je bestelling ligt klaar om af te halen'
+    Intro: 'Goed nieuws — je bestelling ligt klaar om in de winkel af te halen.'
+    Order: 'Bestelling'
+    BringReference: 'Neem je bestelnummer mee (en een identiteitsbewijs als we daarom vragen) wanneer je komt afhalen.'
+    Fineprint: 'Je ontvangt deze e-mail omdat je ervoor hebt gekozen je bestelling in de winkel af te halen.'

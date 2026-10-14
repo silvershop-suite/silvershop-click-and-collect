@@ -1,0 +1,22 @@
+es:
+  SilverShop\ClickAndCollect\Model\PickupShippingMethod:
+    SINGULARNAME: 'Método de recogida'
+    PLURALNAME: 'Métodos de recogida'
+    db_Fee: 'Coste de recogida'
+    FeeDesc: 'Coste de recogida fijo opcional. Déjalo en 0 para recogida gratuita.'
+  SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
+    TabPickup: 'Recogida'
+    Location: 'Punto de recogida'
+    ReadyForPickup: 'Lista para recoger'
+    ReadyForPickupDesc: 'Marca esto para avisar al cliente de que su pedido está listo para recoger. Al guardar se le envía un correo una sola vez.'
+    Collected: 'Recogido'
+    CollectedDesc: 'Marca cuando el cliente haya recogido el pedido.'
+    db_ReadyForPickup: 'Lista para recoger'
+    db_Collected: 'Recogido'
+  SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
+    Subject: 'Tu pedido #{OrderNo} está listo para recoger'
+    Heading: 'Tu pedido está listo para recoger'
+    Intro: 'Buenas noticias: tu pedido está listo para recoger en la tienda.'
+    Order: 'Pedido'
+    BringReference: 'Por favor, trae tu número de pedido (y una identificación si te la pedimos) al recogerlo.'
+    Fineprint: 'Recibes este correo porque elegiste recoger tu pedido en la tienda.'

@@ -1,0 +1,73 @@
+{
+    "name": "silvershop/click-and-collect",
+    "description": "Local pickup / click & collect (BOPIS) for SilverShop: a dedicated zero-cost PickupShippingMethod that suppresses the shipping address, a first-class collect fulfilment layer on the order (ready-for-pickup / collected), and a styled ready-for-pickup notification email.",
+    "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "silverstripe",
+        "silvershop",
+        "ecommerce",
+        "shop",
+        "pickup",
+        "click-and-collect",
+        "bopis",
+        "local-pickup",
+        "afhalen"
+    ],
+    "authors": [
+        {
+            "name": "Remy van Aartjes",
+            "email": "remy@xd.nl"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "silverstripe/framework": "^6.0",
+        "silvershop/core": "^6",
+        "silvershop/shipping": "^4"
+    },
+    "require-dev": {
+        "cambis/silverstan": "^2.1",
+        "silverstripe/recipe-testing": "^4",
+        "silverstripe/sqlite3": "^4",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "suggest": {
+        "silvershop/store-profile": "Supplies the single implicit pickup location in v1 — the shop address + name shown in the ready-for-pickup email and the admin pickup panel.",
+        "silvershop/order-admin": "Surfaces the pickup fulfilment pills in the modern order screen (this module ships a standalone Pickup tab as a fallback).",
+        "silvershop/notification-log": "Logs the ready-for-pickup email (fulfilment audit) from the stamped X-SilverShop-Notification-Key header.",
+        "silvershop/storefront": "Ships the styled checkout delivery-vs-pickup choice and the account / confirmation 'ready for pickup' wording (this module relies on the existing shipping-method optionset)."
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "SilverShop\\ClickAndCollect\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SilverShop\\ClickAndCollect\\Tests\\": "tests/php/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true,
+            "php-http/discovery": false
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test:coverage": "vendor/bin/phpunit --coverage-html coverage --coverage-text",
+        "stan": "vendor/bin/phpstan analyse --configuration=phpstan.neon --memory-limit=-1",
+        "lint": "vendor/bin/phpcs",
+        "lint:fix": "vendor/bin/phpcbf"
+    }
+}

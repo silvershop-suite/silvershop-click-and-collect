@@ -1,0 +1,8 @@
+---
+Name: silvershop-click-and-collect
+After:
+  - silvershop-shipping
+---
+SilverShop\Model\Order:
+  extensions:
+    - SilverShop\ClickAndCollect\Extension\OrderPickupExtension

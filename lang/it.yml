@@ -1,0 +1,22 @@
+it:
+  SilverShop\ClickAndCollect\Model\PickupShippingMethod:
+    SINGULARNAME: 'Metodo di ritiro'
+    PLURALNAME: 'Metodi di ritiro'
+    db_Fee: 'Costo di ritiro'
+    FeeDesc: 'Costo di ritiro fisso opzionale. Lascia a 0 per il ritiro gratuito.'
+  SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
+    TabPickup: 'Ritiro'
+    Location: 'Punto di ritiro'
+    ReadyForPickup: 'Pronto per il ritiro'
+    ReadyForPickupDesc: 'Imposta questo per avvisare il cliente che l''ordine è pronto per il ritiro. Al salvataggio viene inviata una email una sola volta.'
+    Collected: 'Ritirato'
+    CollectedDesc: 'Imposta quando il cliente ha ritirato l''ordine.'
+    db_ReadyForPickup: 'Pronto per il ritiro'
+    db_Collected: 'Ritirato'
+  SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
+    Subject: 'Il tuo ordine #{OrderNo} è pronto per il ritiro'
+    Heading: 'Il tuo ordine è pronto per il ritiro'
+    Intro: 'Buone notizie — il tuo ordine è pronto per il ritiro in negozio.'
+    Order: 'Ordine'
+    BringReference: 'Porta con te il numero d''ordine (e un documento se richiesto) al momento del ritiro.'
+    Fineprint: 'Ricevi questa email perché hai scelto di ritirare il tuo ordine in negozio.'

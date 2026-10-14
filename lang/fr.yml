@@ -1,0 +1,22 @@
+fr:
+  SilverShop\ClickAndCollect\Model\PickupShippingMethod:
+    SINGULARNAME: 'Méthode de retrait'
+    PLURALNAME: 'Méthodes de retrait'
+    db_Fee: 'Frais de retrait'
+    FeeDesc: 'Frais de retrait forfaitaires facultatifs. Laissez à 0 pour un retrait gratuit.'
+  SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
+    TabPickup: 'Retrait'
+    Location: 'Lieu de retrait'
+    ReadyForPickup: 'Prête pour le retrait'
+    ReadyForPickupDesc: 'Définissez ceci pour informer le client que sa commande est prête à être retirée. L''enregistrement lui envoie un e-mail une seule fois.'
+    Collected: 'Retirée'
+    CollectedDesc: 'À définir lorsque le client a retiré la commande.'
+    db_ReadyForPickup: 'Prête pour le retrait'
+    db_Collected: 'Retirée'
+  SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
+    Subject: 'Votre commande #{OrderNo} est prête à être retirée'
+    Heading: 'Votre commande est prête à être retirée'
+    Intro: 'Bonne nouvelle — votre commande est prête à être retirée en magasin.'
+    Order: 'Commande'
+    BringReference: 'Veuillez apporter votre numéro de commande (et une pièce d''identité si nous la demandons) lors du retrait.'
+    Fineprint: 'Vous recevez cet e-mail car vous avez choisi de retirer votre commande en magasin.'

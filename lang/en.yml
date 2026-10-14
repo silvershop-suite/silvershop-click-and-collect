@@ -1,0 +1,22 @@
+en:
+  SilverShop\ClickAndCollect\Model\PickupShippingMethod:
+    SINGULARNAME: 'Pickup / collect method'
+    PLURALNAME: 'Pickup / collect methods'
+    db_Fee: 'Pickup fee'
+    FeeDesc: 'Optional flat pickup fee. Leave at 0 for free collection.'
+  SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
+    TabPickup: 'Pickup'
+    Location: 'Pickup location'
+    ReadyForPickup: 'Ready for pickup'
+    ReadyForPickupDesc: 'Set this to notify the customer their order is ready to collect. Saving emails them once.'
+    Collected: 'Collected'
+    CollectedDesc: 'Set when the customer has collected the order.'
+    db_ReadyForPickup: 'Ready for pickup'
+    db_Collected: 'Collected'
+  SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
+    Subject: 'Your order #{OrderNo} is ready to collect'
+    Heading: 'Your order is ready to collect'
+    Intro: 'Good news — your order is ready to be picked up in store.'
+    Order: 'Order'
+    BringReference: 'Please bring your order reference (and ID if we ask for it) when you collect.'
+    Fineprint: 'You are receiving this because you chose to collect your order in store.'
