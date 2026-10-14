@@ -71,6 +71,18 @@ class OrderPickupExtensionTest extends SapphireTest
         $this->assertFalse($order->markCollected());
     }
 
+    public function testPickupTabAddedToCMSFields(): void
+    {
+        $order = Order::create(['Email' => 'buyer@example.com']);
+        $order->write();
+
+        $fields = $order->getCMSFields();
+
+        $this->assertNotNull($fields->fieldByName('Root.Pickup'), 'A Pickup tab is added to the order edit form');
+        $this->assertNotNull($fields->dataFieldByName('ReadyForPickup'));
+        $this->assertNotNull($fields->dataFieldByName('Collected'));
+    }
+
     public function testReadyThenCollectedStateProgression(): void
     {
         $order = Order::create();
