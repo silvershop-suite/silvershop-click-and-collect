@@ -26,11 +26,11 @@ Behind the method, **`OrderPickupExtension`** adds the collect fulfilment layer 
   order-admin screen already reads — no new `Order.Status` enum value);
 - `IsPickup()`, `IsReadyForPickup()`, `IsCollected()`, `PickupFulfilmentState()` predicates;
 - `markReadyForPickup()` / `markCollected()` actions, and a standalone **Pickup** tab on the order edit form
-  (date fields + the store-profile pickup location) when `silvershop/order-admin` is not driving it;
+  (date fields + the store-profile pickup location) when `silvershop-suite/order-admin` is not driving it;
 - when `ReadyForPickup` transitions from empty to set, a **ready-for-pickup email** is sent once.
 
 The **`ReadyForPickupEmail`** is self-contained (its own inline-safe `<style>`, so the module installs on
-core 6.1 without the 6.2 email shell) and stamps two headers an optional `silvershop/notification-log`
+core 6.1 without the 6.2 email shell) and stamps two headers an optional `silvershop-suite/notification-log`
 records with zero coupling:
 
 ```
@@ -41,7 +41,7 @@ X-SilverShop-Notification-Key: pickup.ready
 ## Installation
 
 ```bash
-composer require silvershop/click-and-collect
+composer require silvershop-suite/click-and-collect
 ```
 
 Then run `dev/build?flush=all`. In **Settings → Shipping methods** add a *Pickup / collect method*
@@ -53,10 +53,10 @@ Requires `silvershop/core ^6` and `silvershop/shipping`. Optional integrations (
 
 | Module | What it adds |
 |---|---|
-| `silvershop/store-profile` | The single implicit pickup location (address + name) shown in the email and admin panel. |
-| `silvershop/order-admin` | Surfaces pickup state in the modern order screen (this module ships a standalone Pickup tab otherwise). |
-| `silvershop/notification-log` | Logs the ready-for-pickup email from the stamped header. |
-| `silvershop/storefront` | Styled checkout delivery-vs-pickup choice and account / confirmation pickup wording. |
+| `silvershop-suite/store-profile` | The single implicit pickup location (address + name) shown in the email and admin panel. |
+| `silvershop-suite/order-admin` | Surfaces pickup state in the modern order screen (this module ships a standalone Pickup tab otherwise). |
+| `silvershop-suite/notification-log` | Logs the ready-for-pickup email from the stamped header. |
+| `silvershop-suite/storefront` | Styled checkout delivery-vs-pickup choice and account / confirmation pickup wording. |
 
 ## Configuration
 
@@ -72,7 +72,7 @@ The pickup fee is per-method (the `Fee` field on each `PickupShippingMethod`).
 ## Roadmap (v2)
 
 Deliberately **not** in v1: multi-location `PickupLocation` model + checkout location picker; time slots;
-the per-product pickup-only / not-shippable flag (`silvershop/shippability`) and the mixed-cart
+the per-product pickup-only / not-shippable flag (`silvershop-suite/shippability`) and the mixed-cart
 "forces pickup" enforcement; collector-name / notes; hold-period reminders + no-show handling; and the fuller
 Fable storefront UX (the Linberg click & collect design is the reference).
 
