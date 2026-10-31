@@ -28,7 +28,7 @@
         "php": "^8.3",
         "silverstripe/framework": "^6.0",
         "silvershop/core": "^6",
-        "silvershop/shipping": "^3.2"
+        "silvershop/shipping": "^3.2 || ^4"
     },
     "require-dev": {
         "cambis/silverstan": "^2.1",
