@@ -5,8 +5,9 @@ Local pickup / click & collect (BOPIS) for [SilverShop](https://github.com/silve
 address required, and a first-class *collect* fulfilment layer the shop can act on
 (ordered → ready for pickup → collected) with a styled **ready-for-pickup** notification email.
 
-This is the **v1** slice: a single implicit pickup location (the store-profile address), €0 (or a flat fee)
-collect, address suppression, the ready / collected fulfilment state, and the ready-for-pickup email.
+This is the **v1** slice: one pickup location (the store-profile address) or one per store with
+[store-locations](#several-stores-with-silvershop-suitestore-locations), €0 (or a flat fee) collect, address
+suppression, the ready / collected fulfilment state, and the ready-for-pickup email.
 See [Roadmap](#roadmap-v2) for what is deliberately out of scope.
 
 ## How it works
@@ -87,8 +88,7 @@ Without store-locations a pickup method keeps using the single store-profile add
 Deliberately **not** in v1: a dedicated checkout location picker (today each store is its own pickup method);
 time slots (see delivery-scheduling);
 the per-product pickup-only / not-shippable flag (`silvershop-suite/shippability`) and the mixed-cart
-"forces pickup" enforcement; collector-name / notes; hold-period reminders + no-show handling; and the fuller
-Fable storefront UX (the Linberg click & collect design is the reference).
+"forces pickup" enforcement; collector-name / notes; hold-period reminders + no-show handling; and a fuller storefront UX.
 
 ## Licence
 
