@@ -72,7 +72,7 @@ The pickup fee is per-method (the `Fee` field on each `PickupShippingMethod`).
 ## Several stores (with silvershop-suite/store-locations)
 
 Install [`silvershop-suite/store-locations`](https://github.com/silvershop-suite/silvershop-store-locations) and
-create **one pickup method per store** ("Collect at Delft", "Collect at Nootdorp"), each linked to its store in
+create **one pickup method per store** ("Collect at High Street", "Collect at Riverside"), each linked to its store in
 the method's **Store** field. Then:
 
 - the order's Pickup tab shows that store's name and address (`$Order.PickupStoreLocation` in templates);

@@ -11,7 +11,7 @@ use SilverStripe\Forms\FieldList;
 
 /**
  * Links a pickup method to a physical store from silvershop-suite/store-locations, so a shop with several stores
- * gets one pickup method per store ("Collect at Delft", "Collect at Nootdorp"). The order, the CMS and the
+ * gets one pickup method per store ("Collect at High Street", "Collect at Riverside"). The order, the CMS and the
  * ready-for-pickup email then show that store's name, address and opening hours, and a method whose store is
  * permanently closed is no longer offered.
  *

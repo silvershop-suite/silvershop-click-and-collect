@@ -33,8 +33,8 @@ class PickupStoreLocationTest extends SapphireTest
     private function store(array $data = []): StoreLocation
     {
         $location = StoreLocation::create(array_merge([
-            'Title' => 'Voorstraat',
-            'Street' => 'Voorstraat',
+            'Title' => 'High Street',
+            'Street' => 'High Street',
             'HouseNumber' => '1',
             'PostalCode' => '2611 JA',
             'City' => 'Delft',
@@ -71,7 +71,7 @@ class PickupStoreLocationTest extends SapphireTest
         $this->assertSame($location->ID, $order->PickupStoreLocation()?->ID);
 
         $summary = $order->PickupLocationSummary();
-        $this->assertStringContainsString('<strong>Voorstraat</strong>', $summary);
+        $this->assertStringContainsString('<strong>High Street</strong>', $summary);
         $this->assertStringContainsString('2611 JA Delft', $summary);
     }
 
@@ -89,7 +89,7 @@ class PickupStoreLocationTest extends SapphireTest
         $email = ReadyForPickupEmail::create_for($order);
         $data = $email->getData();
 
-        $this->assertSame('Voorstraat', $data->StoreName);
+        $this->assertSame('High Street', $data->StoreName);
         $this->assertStringContainsString('2611 JA Delft', (string) $data->StoreAddress);
         $this->assertNotNull($data->StoreHours);
         $this->assertSame('Mon to Tue', $data->StoreHours->first()->Days);
