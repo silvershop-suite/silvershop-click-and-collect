@@ -186,12 +186,32 @@ class OrderPickupExtension extends Extension
     }
 
     /**
-     * The single implicit v1 pickup location: the store-profile address when that module is installed.
-     * Returns a safe HTML fragment (field values escaped by the address formatter / {@see Convert::raw2xml()})
-     * or an empty string.
+     * The store this pickup order is collected from: the store location linked to its pickup method
+     * (silvershop-suite/store-locations), or null when there is none (single-store shops use store-profile).
+     */
+    public function PickupStoreLocation(): ?DataObject
+    {
+        if (!$this->IsPickup()) {
+            return null;
+        }
+        $method = $this->getOwner()->ShippingMethod();
+
+        return $method->hasMethod('PickupStoreLocation') ? $method->PickupStoreLocation() : null;
+    }
+
+    /**
+     * Where the order is collected, as a safe HTML fragment: the linked store location (name + address) when
+     * there is one, else the store-profile address when that module is installed, else an empty string. Field
+     * values are escaped by the address formatter / {@see Convert::raw2xml()}.
      */
     public function PickupLocationSummary(): string
     {
+        $location = $this->PickupStoreLocation();
+        if ($location !== null && $location->hasMethod('FormattedAddress')) {
+            return trim('<strong>' . Convert::raw2xml((string) $location->getTitle()) . '</strong><br>'
+                . (string) $location->FormattedAddress());
+        }
+
         $config = SiteConfig::current_site_config();
         if (!$config->hasMethod('hasStoreAddress') || !$config->hasStoreAddress()) {
             return '';

@@ -57,6 +57,15 @@ class ReadyForPickupEmail
         $storeAddress = $config->hasMethod('StoreFormattedAddress')
             ? (string) $config->StoreFormattedAddress(true)
             : '';
+        $storeHours = null;
+
+        // A pickup method linked to a store location (silvershop-suite/store-locations): use that store.
+        $location = $order->hasMethod('PickupStoreLocation') ? $order->PickupStoreLocation() : null;
+        if ($location !== null && $location->hasMethod('FormattedAddress')) {
+            $storeName = (string) $location->getTitle();
+            $storeAddress = (string) $location->FormattedAddress();
+            $storeHours = $location->hasMethod('HoursSummary') ? $location->HoursSummary() : null;
+        }
 
         $template = (string) self::config()->get('html_template');
 
@@ -71,6 +80,7 @@ class ReadyForPickupEmail
             'Order' => $order,
             'StoreName' => $storeName,
             'StoreAddress' => $storeAddress,
+            'StoreHours' => $storeHours,
             'BaseURL' => Director::absoluteBaseURL(),
         ]);
 

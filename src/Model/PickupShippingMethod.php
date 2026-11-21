@@ -51,6 +51,13 @@ class PickupShippingMethod extends ShippingMethod
      */
     public function calculateRate(ShippingPackage $package, Address $address): float|int|null
     {
+        // A method linked to a permanently closed store (silvershop-suite/store-locations) is not offered:
+        // returning null makes the shipping estimator drop it.
+        $location = $this->hasMethod('PickupStoreLocation') ? $this->PickupStoreLocation() : null;
+        if ($location !== null && !$location->isListed()) {
+            return $this->CalculatedRate = null;
+        }
+
         return $this->CalculatedRate = (float) $this->Fee;
     }
 

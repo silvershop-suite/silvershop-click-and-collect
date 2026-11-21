@@ -4,6 +4,7 @@ de:
     PLURALNAME: 'Abholmethoden'
     db_Fee: 'Abholgebühr'
     FeeDesc: 'Optionale pauschale Abholgebühr. Für kostenlose Abholung bei 0 lassen.'
+    has_one_StoreLocation: 'Geschäft'
   SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
     TabPickup: 'Abholung'
     Location: 'Abholort'
@@ -20,3 +21,6 @@ de:
     Order: 'Bestellung'
     BringReference: 'Bitte bringen Sie Ihre Bestellnummer mit (und einen Ausweis, falls wir danach fragen), wenn Sie abholen.'
     Fineprint: 'Sie erhalten diese E-Mail, weil Sie Ihre Bestellung im Geschäft abholen möchten.'
+    OpeningHours: 'Öffnungszeiten'
+  SilverShop\ClickAndCollect\Extension\PickupMethodStoreLocationExtension:
+    StoreLocationDesc: 'Das Geschäft, in dem Kunden mit dieser Methode bestellte Ware abholen. Adresse und Öffnungszeiten erscheinen in der Bestellung und in der Abhol-E-Mail.'

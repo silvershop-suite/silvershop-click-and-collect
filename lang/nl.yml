@@ -4,6 +4,7 @@ nl:
     PLURALNAME: 'Afhaalmethodes'
     db_Fee: 'Afhaalkosten'
     FeeDesc: 'Optionele vaste afhaalkosten. Laat op 0 staan voor gratis afhalen.'
+    has_one_StoreLocation: 'Winkel'
   SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
     TabPickup: 'Afhalen'
     Location: 'Afhaallocatie'
@@ -20,3 +21,6 @@ nl:
     Order: 'Bestelling'
     BringReference: 'Neem je bestelnummer mee (en een identiteitsbewijs als we daarom vragen) wanneer je komt afhalen.'
     Fineprint: 'Je ontvangt deze e-mail omdat je ervoor hebt gekozen je bestelling in de winkel af te halen.'
+    OpeningHours: 'Openingstijden'
+  SilverShop\ClickAndCollect\Extension\PickupMethodStoreLocationExtension:
+    StoreLocationDesc: 'De winkel waar klanten bestellingen met deze methode ophalen. Het adres en de openingstijden staan op de bestelling en in de ophaalmail.'

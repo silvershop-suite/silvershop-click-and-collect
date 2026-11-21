@@ -4,6 +4,7 @@ es:
     PLURALNAME: 'Métodos de recogida'
     db_Fee: 'Coste de recogida'
     FeeDesc: 'Coste de recogida fijo opcional. Déjalo en 0 para recogida gratuita.'
+    has_one_StoreLocation: 'Tienda'
   SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
     TabPickup: 'Recogida'
     Location: 'Punto de recogida'
@@ -20,3 +21,6 @@ es:
     Order: 'Pedido'
     BringReference: 'Por favor, trae tu número de pedido (y una identificación si te la pedimos) al recogerlo.'
     Fineprint: 'Recibes este correo porque elegiste recoger tu pedido en la tienda.'
+    OpeningHours: 'Horario de apertura'
+  SilverShop\ClickAndCollect\Extension\PickupMethodStoreLocationExtension:
+    StoreLocationDesc: 'La tienda donde los clientes recogen los pedidos realizados con este método. Su dirección y horario aparecen en el pedido y en el correo de recogida.'

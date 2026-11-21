@@ -4,6 +4,7 @@ it:
     PLURALNAME: 'Metodi di ritiro'
     db_Fee: 'Costo di ritiro'
     FeeDesc: 'Costo di ritiro fisso opzionale. Lascia a 0 per il ritiro gratuito.'
+    has_one_StoreLocation: 'Negozio'
   SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
     TabPickup: 'Ritiro'
     Location: 'Punto di ritiro'
@@ -20,3 +21,6 @@ it:
     Order: 'Ordine'
     BringReference: 'Porta con te il numero d''ordine (e un documento se richiesto) al momento del ritiro.'
     Fineprint: 'Ricevi questa email perché hai scelto di ritirare il tuo ordine in negozio.'
+    OpeningHours: 'Orari di apertura'
+  SilverShop\ClickAndCollect\Extension\PickupMethodStoreLocationExtension:
+    StoreLocationDesc: 'Il negozio in cui i clienti ritirano gli ordini effettuati con questo metodo. Indirizzo e orari compaiono nell''ordine e nell''e-mail di ritiro.'

@@ -34,6 +34,10 @@
             <div class="location">
                 <% if $StoreName %><strong>$StoreName</strong><% end_if %>
                 $StoreAddress.RAW
+                <% if $StoreHours %>
+                    <p style="margin:10px 0 0;font-size:14px;"><strong><%t SilverShop\ClickAndCollect\Email\ReadyForPickupEmail.OpeningHours "Opening hours" %></strong><br>
+                    <% loop $StoreHours %>$Days: $Hours<br><% end_loop %></p>
+                <% end_if %>
             </div>
         <% end_if %>
 

@@ -6,3 +6,13 @@ After:
 SilverShop\Model\Order:
   extensions:
     - SilverShop\ClickAndCollect\Extension\OrderPickupExtension
+
+---
+Name: silvershop-click-and-collect-store-locations
+Only:
+  classexists: 'SilverShop\StoreLocations\Model\StoreLocation'
+---
+# One pickup method per physical store (silvershop-suite/store-locations): the method links to a store location.
+SilverShop\ClickAndCollect\Model\PickupShippingMethod:
+  extensions:
+    - SilverShop\ClickAndCollect\Extension\PickupMethodStoreLocationExtension

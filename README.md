@@ -69,9 +69,23 @@ SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
 
 The pickup fee is per-method (the `Fee` field on each `PickupShippingMethod`).
 
+## Several stores (with silvershop-suite/store-locations)
+
+Install [`silvershop-suite/store-locations`](https://github.com/silvershop-suite/silvershop-store-locations) and
+create **one pickup method per store** ("Collect at Delft", "Collect at Nootdorp"), each linked to its store in
+the method's **Store** field. Then:
+
+- the order's Pickup tab shows that store's name and address (`$Order.PickupStoreLocation` in templates);
+- the ready-for-pickup email names the store and lists its opening hours;
+- a method whose store is **permanently closed** is no longer offered at checkout;
+- `silvershop-suite/delivery-scheduling` offers only that store's pickup slots and skips its closed days.
+
+Without store-locations a pickup method keeps using the single store-profile address.
+
 ## Roadmap (v2)
 
-Deliberately **not** in v1: multi-location `PickupLocation` model + checkout location picker; time slots;
+Deliberately **not** in v1: a dedicated checkout location picker (today each store is its own pickup method);
+time slots (see delivery-scheduling);
 the per-product pickup-only / not-shippable flag (`silvershop-suite/shippability`) and the mixed-cart
 "forces pickup" enforcement; collector-name / notes; hold-period reminders + no-show handling; and the fuller
 Fable storefront UX (the Linberg click & collect design is the reference).

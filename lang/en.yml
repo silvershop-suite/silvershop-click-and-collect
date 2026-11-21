@@ -4,6 +4,7 @@ en:
     PLURALNAME: 'Pickup / collect methods'
     db_Fee: 'Pickup fee'
     FeeDesc: 'Optional flat pickup fee. Leave at 0 for free collection.'
+    has_one_StoreLocation: 'Store'
   SilverShop\ClickAndCollect\Extension\OrderPickupExtension:
     TabPickup: 'Pickup'
     Location: 'Pickup location'
@@ -20,3 +21,6 @@ en:
     Order: 'Order'
     BringReference: 'Please bring your order reference (and ID if we ask for it) when you collect.'
     Fineprint: 'You are receiving this because you chose to collect your order in store.'
+    OpeningHours: 'Opening hours'
+  SilverShop\ClickAndCollect\Extension\PickupMethodStoreLocationExtension:
+    StoreLocationDesc: 'The store where customers collect orders placed with this method. Its address and opening hours are shown on the order and in the pickup email.'

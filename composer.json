@@ -34,13 +34,15 @@
         "cambis/silverstan": "^2.1",
         "silverstripe/recipe-testing": "^4",
         "silverstripe/sqlite3": "^4",
-        "squizlabs/php_codesniffer": "^3.0"
+        "squizlabs/php_codesniffer": "^3.0",
+        "silvershop-suite/store-locations": "^1.0"
     },
     "suggest": {
         "silvershop-suite/store-profile": "Supplies the single implicit pickup location in v1 — the shop address + name shown in the ready-for-pickup email and the admin pickup panel.",
         "silvershop-suite/order-admin": "Surfaces the pickup fulfilment pills in the modern order screen (this module ships a standalone Pickup tab as a fallback).",
         "silvershop-suite/notification-log": "Logs the ready-for-pickup email (fulfilment audit) from the stamped X-SilverShop-Notification-Key header.",
-        "silvershop-suite/storefront": "Ships the styled checkout delivery-vs-pickup choice and the account / confirmation 'ready for pickup' wording (this module relies on the existing shipping-method optionset)."
+        "silvershop-suite/storefront": "Ships the styled checkout delivery-vs-pickup choice and the account / confirmation 'ready for pickup' wording (this module relies on the existing shipping-method optionset).",
+        "silvershop-suite/store-locations": "One pickup method per physical store: the order, the CMS and the pickup email show that store's address and opening hours."
     },
     "prefer-stable": true,
     "minimum-stability": "dev",
@@ -73,5 +75,11 @@
         "stan": "vendor/bin/phpstan analyse --configuration=phpstan.neon --memory-limit=-1",
         "lint": "vendor/bin/phpcs",
         "lint:fix": "vendor/bin/phpcbf"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/silvershop-suite/silvershop-store-locations.git"
+        }
+    ]
 }
