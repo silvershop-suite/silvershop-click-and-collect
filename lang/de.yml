@@ -17,7 +17,7 @@ de:
   SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
     Subject: 'Ihre Bestellung #{OrderNo} ist abholbereit'
     Heading: 'Ihre Bestellung ist abholbereit'
-    Intro: 'Gute Nachrichten — Ihre Bestellung liegt zur Abholung im Geschäft bereit.'
+    Intro: 'Gute Nachrichten: Ihre Bestellung liegt zur Abholung im Geschäft bereit.'
     Order: 'Bestellung'
     BringReference: 'Bitte bringen Sie Ihre Bestellnummer mit (und einen Ausweis, falls wir danach fragen), wenn Sie abholen.'
     Fineprint: 'Sie erhalten diese E-Mail, weil Sie Ihre Bestellung im Geschäft abholen möchten.'

@@ -17,7 +17,7 @@ it:
   SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
     Subject: 'Il tuo ordine #{OrderNo} è pronto per il ritiro'
     Heading: 'Il tuo ordine è pronto per il ritiro'
-    Intro: 'Buone notizie — il tuo ordine è pronto per il ritiro in negozio.'
+    Intro: 'Buone notizie: il tuo ordine è pronto per il ritiro in negozio.'
     Order: 'Ordine'
     BringReference: 'Porta con te il numero d''ordine (e un documento se richiesto) al momento del ritiro.'
     Fineprint: 'Ricevi questa email perché hai scelto di ritirare il tuo ordine in negozio.'

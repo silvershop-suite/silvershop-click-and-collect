@@ -24,7 +24,7 @@
     <div class="card">
         <h1><%t SilverShop\ClickAndCollect\Email\ReadyForPickupEmail.Heading "Your order is ready to collect" %></h1>
 
-        <p><%t SilverShop\ClickAndCollect\Email\ReadyForPickupEmail.Intro "Good news — your order is ready to be picked up in store." %></p>
+        <p><%t SilverShop\ClickAndCollect\Email\ReadyForPickupEmail.Intro "Good news: your order is ready to be picked up in store." %></p>
 
         <% if $Order %>
             <p class="ref"><%t SilverShop\ClickAndCollect\Email\ReadyForPickupEmail.Order "Order" %> #$Order.Reference</p>

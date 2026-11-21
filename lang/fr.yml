@@ -17,7 +17,7 @@ fr:
   SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
     Subject: 'Votre commande #{OrderNo} est prête à être retirée'
     Heading: 'Votre commande est prête à être retirée'
-    Intro: 'Bonne nouvelle — votre commande est prête à être retirée en magasin.'
+    Intro: 'Bonne nouvelle : votre commande est prête à être retirée en magasin.'
     Order: 'Commande'
     BringReference: 'Veuillez apporter votre numéro de commande (et une pièce d''identité si nous la demandons) lors du retrait.'
     Fineprint: 'Vous recevez cet e-mail car vous avez choisi de retirer votre commande en magasin.'

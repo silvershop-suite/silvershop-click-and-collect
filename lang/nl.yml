@@ -17,7 +17,7 @@ nl:
   SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
     Subject: 'Je bestelling #{OrderNo} ligt klaar om af te halen'
     Heading: 'Je bestelling ligt klaar om af te halen'
-    Intro: 'Goed nieuws — je bestelling ligt klaar om in de winkel af te halen.'
+    Intro: 'Goed nieuws: je bestelling ligt klaar om in de winkel af te halen.'
     Order: 'Bestelling'
     BringReference: 'Neem je bestelnummer mee (en een identiteitsbewijs als we daarom vragen) wanneer je komt afhalen.'
     Fineprint: 'Je ontvangt deze e-mail omdat je ervoor hebt gekozen je bestelling in de winkel af te halen.'

@@ -17,7 +17,7 @@ en:
   SilverShop\ClickAndCollect\Email\ReadyForPickupEmail:
     Subject: 'Your order #{OrderNo} is ready to collect'
     Heading: 'Your order is ready to collect'
-    Intro: 'Good news — your order is ready to be picked up in store.'
+    Intro: 'Good news: your order is ready to be picked up in store.'
     Order: 'Order'
     BringReference: 'Please bring your order reference (and ID if we ask for it) when you collect.'
     Fineprint: 'You are receiving this because you chose to collect your order in store.'

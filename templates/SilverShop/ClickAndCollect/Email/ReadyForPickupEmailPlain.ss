@@ -1,6 +1,6 @@
 <%t SilverShop\ClickAndCollect\Email\ReadyForPickupEmail.Heading "Your order is ready to collect" %>
 
-<%t SilverShop\ClickAndCollect\Email\ReadyForPickupEmail.Intro "Good news — your order is ready to be picked up in store." %>
+<%t SilverShop\ClickAndCollect\Email\ReadyForPickupEmail.Intro "Good news: your order is ready to be picked up in store." %>
 <% if $Order %>
 <%t SilverShop\ClickAndCollect\Email\ReadyForPickupEmail.Order "Order" %> #$Order.Reference
 <% end_if %>
